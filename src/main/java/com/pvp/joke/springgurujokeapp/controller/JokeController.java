@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pvp.joke.springgurujokeapp.services.JokeService;
-import com.pvp.joke.springgurujokeapp.services.JokeServiceImp;
 
 /**
  * 
@@ -19,8 +18,8 @@ public class JokeController {
 	JokeService jokeService;
 
 	@Autowired
-	public JokeController() {
-		this.jokeService = new JokeServiceImp();
+	public JokeController(JokeService jokeService) {
+		this.jokeService = jokeService ;
 	}
 
 	@RequestMapping({ "/", "" })
